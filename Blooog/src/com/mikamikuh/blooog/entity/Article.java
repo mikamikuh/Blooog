@@ -46,6 +46,11 @@ public class Article {
 		this.postedDate = postedDate;
 		this.author = author;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
 
 	public String getTitle() {
 		return title;
