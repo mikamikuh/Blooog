@@ -13,6 +13,9 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 	<context:component-scan base-package="com.mikamikuh.blooog.controller" />
 	<mvc:annotation-driven />
 
+	<mvc:resources mapping="/static/**" location="/static/"
+		cache-period="5" />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
