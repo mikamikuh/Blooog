@@ -19,7 +19,7 @@ public class User {
 	@Column(name = "PASSWORD", nullable = false)
 	private String password;
 
-	@OneToMany(mappedBy = "USER")
+	@OneToMany(mappedBy = "author")
 	private Set<Article> articles;
 
 	public User() {
