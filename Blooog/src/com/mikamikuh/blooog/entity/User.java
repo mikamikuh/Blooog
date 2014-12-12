@@ -18,8 +18,8 @@ public class User {
 
 	@Column(name = "PASSWORD", nullable = false)
 	private String password;
-	
-	@OneToMany(mappedBy="USER")
+
+	@OneToMany(mappedBy = "USER")
 	private Set<Article> articles;
 
 	public User() {
@@ -44,6 +44,10 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Set<Article> getArticles() {
+		return articles;
 	}
 
 	@Override
