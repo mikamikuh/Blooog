@@ -9,6 +9,15 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/spring/applicationContext.xml, classpath:/spring/hibernateContext.xml</param-value>
+	</context-param>
+
 	<servlet>
 		<servlet-name>blooog</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
