@@ -10,14 +10,14 @@
 				<label class="control-label" for="title">Title</label>
 				<div class="controls">
 					<input type="text" id="title" name="title" placeholder=""
-						class="input-xlarge">
+						class="input-xlarge" value="${article.title}">
 				</div>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="body">Body</label>
 				<div class="controls">
-					<textarea class="controlls" rows="5" id="body" name="body"></textarea>
+					<textarea class="controlls" rows="5" id="body" name="body">${article.body}</textarea>
 				</div>
 			</div>
 

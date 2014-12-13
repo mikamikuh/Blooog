@@ -46,7 +46,7 @@ public class BlooogController {
 		Article article = new Article(title, body, "", new Date(), user);
 		articleService.addArticle(article, "aaa");
 
-		return "article";
+		return "index";
 	}
 
 	@RequestMapping(value = "/article/{id}", method = RequestMethod.GET)
@@ -54,19 +54,47 @@ public class BlooogController {
 		Article article = articleService.findArticleById(id);
 		model.addAttribute("article", article);
 		model.addAttribute("title", article.getTitle());
-		String subtitle = "Posted by " + article.getAuthor().getUserName() + " on "
-				+ article.getPostedDate().toString();
+		String subtitle = "Posted by " + article.getAuthor().getUserName()
+				+ " on " + article.getPostedDate().toString();
 		model.addAttribute("subtitle", subtitle);
 		return "view";
 	}
-	
+
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	public String editArticle(@PathVariable("id") int id, Model model) {
+		Article article = articleService.findArticleById(id);
+		model.addAttribute("article", article);
+		model.addAttribute("title", article.getTitle());
+		String subtitle = "Posted by " + article.getAuthor().getUserName()
+				+ " on " + article.getPostedDate().toString();
+		model.addAttribute("subtitle", subtitle);
+
+		model.addAttribute("action", "/Blooog/edit/" + article.getId());
+		model.addAttribute("caption", "Edit Article");
+		model.addAttribute("article", article);
+
+		return "article";
+	}
+
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+	public String editArticle(@PathVariable("id") int id,
+			@RequestParam("title") String title,
+			@RequestParam("body") String body, Model model) {
+		Article article = articleService.findArticleById(id);
+		article.setTitle(title);
+		article.setBody(body);
+		articleService.saveArticle(article);
+
+		return editArticle(model);
+	}
+
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public String editArticle(Model model) {
 		Set<Article> articles = articleService.findArticles("aaa");
 		model.addAttribute("articles", articles);
 		return "list";
 	}
-	
+
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String deleteArticle(@PathVariable("id") int id, Model model) {
 		Article article = articleService.findArticleById(id);
