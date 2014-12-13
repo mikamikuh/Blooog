@@ -17,11 +17,9 @@ public class ArticleDAOImpl extends AbstractDAOImpl<Article, String> implements
 
 	@Override
 	public void addArticle(Article article, User author) {
-		getCurrentSession().saveOrUpdate(article);
-
 		Set<Article> articles = author.getArticles();
 		articles.add(article);
-		getCurrentSession().saveOrUpdate(articles);
+		getCurrentSession().saveOrUpdate(article);
 	}
 
 	@Override
