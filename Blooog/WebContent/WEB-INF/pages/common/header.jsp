@@ -76,9 +76,9 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="site-heading">
-						<h1></h1>
+						<h1><c:if test="${title == null || title.isEmpty()}">Blog Title</c:if><c:if test="${title != null}">${title}</c:if></h1>
 						<hr class="small">
-						<span class="subheading">${subtitle}</span>
+						<span class="subheading"><c:if test="${subtitle == null || subtitle.isEmpty()}">blog subtitle</c:if><c:if test="${subtitle != null}">${subtitle}</c:if></span>
 					</div>
 				</div>
 			</div>
