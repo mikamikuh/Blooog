@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +13,10 @@
 <title>Clean Blog</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="static/css/clean-blog.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/static/css/clean-blog.min.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
 <link
@@ -57,9 +58,9 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/">Home</a></li>
-					<li><a href="/new">Write New Article</a></li>
-					<li><a href="/edit">Edit Articles</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/new">Write New Article</a></li>
+					<li><a href="${pageContext.request.contextPath}/edit">Edit Articles</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -70,15 +71,14 @@
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	<header class="intro-header"
-		style="background-image: url('static/img/home-bg.jpg')">
+		style="background-image: url('${pageContext.request.contextPath}/static/img/home-bg.jpg')">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<div class="site-heading">
-						<h1>Clean Blog</h1>
+						<h1></h1>
 						<hr class="small">
-						<span class="subheading">A Clean Blog Theme by Start
-							Bootstrap</span>
+						<span class="subheading">${subtitle}</span>
 					</div>
 				</div>
 			</div>

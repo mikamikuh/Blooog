@@ -6,7 +6,7 @@
 		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 			<c:forEach items="${articles}" var="article">
 				<div class="post-preview">
-					<a href="/article/${article.id}">
+					<a href="${pageContext.request.contextPath}/article/${article.id}">
 						<h2 class="post-title">${article.title}</h2>
 						<h3 class="post-subtitle">Posted by ${article.author.userName} on ${article.postedDate}</h3>
 					</a>
