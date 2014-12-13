@@ -9,7 +9,7 @@ import com.mikamikuh.blooog.entity.User;
 import com.mikamikuh.blooog.service.UserService;
 
 @Service("userService")
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 public class UserServiceImpl implements UserService {
 
 	@Autowired

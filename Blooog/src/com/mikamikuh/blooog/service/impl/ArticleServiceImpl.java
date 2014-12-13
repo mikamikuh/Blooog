@@ -14,7 +14,7 @@ import com.mikamikuh.blooog.entity.User;
 import com.mikamikuh.blooog.service.ArticleService;
 
 @Service("articleService")
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 public class ArticleServiceImpl implements ArticleService {
 
 	@Autowired
