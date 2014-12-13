@@ -32,9 +32,5 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="static/js/bootstrap.min.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="static/js/clean-blog.min.js"></script>
-
 </body>
 </html>
