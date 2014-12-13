@@ -4,6 +4,7 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/static/css"/>
         <property name="context-root" value="Blooog"/>
         <property name="java-output-path" value="/Blooog/build/classes"/>
     </wb-module>
