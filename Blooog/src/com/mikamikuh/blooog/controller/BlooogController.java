@@ -59,4 +59,11 @@ public class BlooogController {
 		model.addAttribute("subtitle", subtitle);
 		return "view";
 	}
+	
+	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	public String editArticle(Model model) {
+		Set<Article> articles = articleService.findArticles("aaa");
+		model.addAttribute("articles", articles);
+		return "list";
+	}
 }
