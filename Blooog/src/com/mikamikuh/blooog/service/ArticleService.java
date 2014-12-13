@@ -11,6 +11,8 @@ public interface ArticleService {
 	void saveArticle(Article article);
 
 	void deleteArticle(Article article);
+	
+	Article findArticleById(int id);
 
 	Set<Article> findArticles(String username);
 }

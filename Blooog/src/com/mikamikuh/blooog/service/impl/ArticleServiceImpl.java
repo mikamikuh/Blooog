@@ -46,4 +46,10 @@ public class ArticleServiceImpl implements ArticleService {
 		User user = userDao.findById(userName);
 		return new HashSet<Article>(user.getArticles());
 	}
+
+	@Override
+	public Article findArticleById(int id) {
+		Article article = articleDao.findById(id);
+		return article;
+	}
 }
