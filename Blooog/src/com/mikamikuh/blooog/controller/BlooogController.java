@@ -66,4 +66,11 @@ public class BlooogController {
 		model.addAttribute("articles", articles);
 		return "list";
 	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String deleteArticle(@PathVariable("id") int id, Model model) {
+		Article article = articleService.findArticleById(id);
+		articleService.deleteArticle(article);
+		return editArticle(model);
+	}
 }

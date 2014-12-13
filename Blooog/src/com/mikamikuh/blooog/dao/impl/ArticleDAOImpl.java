@@ -25,11 +25,6 @@ public class ArticleDAOImpl extends AbstractDAOImpl<Article, Integer> implements
 
 	@Override
 	public void delete(Article article) {
-		User author = article.getAuthor();
-
 		getCurrentSession().delete(article);
-		Set<Article> articles = author.getArticles();
-		articles.remove(article);
-		getCurrentSession().saveOrUpdate(articles);
 	}
 }
