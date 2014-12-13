@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="common/header.jsp"%>
 <div class="container">
-	<form class="form-horizontal" action='${action}' method="POST">
+	<form class="form-horizontal" action='${pageContext.request.contextPath}${action}' method="POST">
 		<fieldset>
 			<div id="legend">
 				<legend class="">${caption}</legend>

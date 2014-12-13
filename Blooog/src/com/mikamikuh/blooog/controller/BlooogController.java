@@ -34,7 +34,7 @@ public class BlooogController {
 
 	@RequestMapping(value = "/new", method = RequestMethod.GET)
 	public String createArticle(Model model) {
-		model.addAttribute("action", "/Blooog/new");
+		model.addAttribute("action", "/new");
 		model.addAttribute("caption", "New Article");
 		return "article";
 	}
@@ -69,7 +69,7 @@ public class BlooogController {
 				+ " on " + article.getPostedDate().toString();
 		model.addAttribute("subtitle", subtitle);
 
-		model.addAttribute("action", "/Blooog/edit/" + article.getId());
+		model.addAttribute("action", "/edit/" + article.getId());
 		model.addAttribute("caption", "Edit Article");
 		model.addAttribute("article", article);
 
